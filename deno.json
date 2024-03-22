@@ -1,7 +1,6 @@
 {
   "imports": {
     "deco-sites/tulia/": "./",
-
     "deco/": "https://denopkg.com/deco-cx/deco@1.57.28/",
     "apps/": "https://denopkg.com/deco-cx/apps@0.35.14/",
     "$fresh/": "https://deno.land/x/fresh@1.6.5/",
@@ -21,7 +20,7 @@
     "component": "deno eval 'import \"deco/scripts/component.ts\"'",
     "release": "deno eval 'import \"deco/scripts/release.ts\"'",
     "update": "deno run -Ar https://deco.cx/update",
-    "check": "deno fmt && deno lint && deno check dev.ts main.ts",
+    "check": "DENO_V8_FLAGS='--max-old-space-size=8192' && deno fmt && deno lint && deno check dev.ts main.ts",
     "install": "deno eval 'import \"deco/scripts/apps/install.ts\"'",
     "uninstall": "deno eval 'import \"deco/scripts/apps/uninstall.ts\"'",
     "bundle": "deno eval 'import \"deco/scripts/apps/bundle.ts\"' deco-sites/tulia",
