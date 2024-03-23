@@ -57,24 +57,21 @@ export default function ProductCardHorizontal({
   loading = false,
 }: ProductProps) {
   let imgSrc = image;
-  if (productPage?.product?.image?.length)
+  if (productPage?.product?.image?.length) {
     imgSrc = productPage.product.image[0].url || image;
+  }
   return (
     <div class="flex flex-col lg:flex-row bg-white rounded-lg">
       <div class="lg:w-1/3">
-        {loading ? (
-          <div class="bg-gray-200 w-full h-full" />
-        ) : (
-          <Image src={imgSrc} alt={title} width={150} height={150} />
-        )}
+        {loading
+          ? <div class="bg-gray-200 w-full h-full" />
+          : <Image src={imgSrc} alt={title} width={150} height={150} />}
       </div>
       <div class="lg:w-2/3 p-4">
         <h2 class="text-xl font-bold mb-2">
           {productPage?.product?.name || title}
         </h2>
-        {loading ? (
-          <span class="loading" />
-        ) : (
+        {loading ? <span class="loading" /> : (
           <p class="text-gray-600 mb-4">
             {productPage?.product?.description || description}
           </p>
