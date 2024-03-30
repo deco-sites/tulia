@@ -1,4 +1,4 @@
-import { Picture, Source } from "apps/website/components/Picture.tsx";
+// import { Picture, Source } from "apps/website/components/Picture.tsx";
 import Image from "apps/website/components/Image.tsx";
 import Header from "../../components/ui/SectionHeader.tsx";
 import type { ImageWidget } from "apps/admin/widgets.ts";
@@ -37,7 +37,7 @@ export interface Props {
 function Banner({ srcMobile, srcDesktop, alt, href }: Banner) {
   return (
     <a href={href} class="overflow-hidden">
-      <Picture>
+      {/* <Picture>
         <Source
           width={150}
           // height={190}
@@ -45,19 +45,20 @@ function Banner({ srcMobile, srcDesktop, alt, href }: Banner) {
           src={srcMobile}
         />
         <Source
-          width={300}
-          // height={420}
+          width={200}
+          height={267}
           media="(min-width: 768px)"
           src={srcDesktop || srcMobile}
-        />
-        <Image
-          width={200}
-          class="w-full h-full object-cover"
-          src={srcMobile}
-          alt={alt}
-          loading="lazy"
-        />
-      </Picture>
+        /> */}
+      <Image
+        width={200}
+        height={267}
+        class="w-full h-full object-cover"
+        src={srcMobile}
+        alt={alt}
+        loading="lazy"
+      />
+      {/* </Picture> */}
     </a>
   );
 }
